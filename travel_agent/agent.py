@@ -21,6 +21,15 @@ Best practices for custom tools:
     Args (description of arguments)
     Returns (describe what return results to expect)
 7. Try to have a dict as return type with status as a parameter so LLM can decide what to do in case of success/failure
+8. Return format should be consistent
+    One return shouldn't give status as success & another as OK even if they belong to different functions
+9. Use strategic instructions in the agent if it has to orchestrate multiple tool uses
+    Make sure it has:
+        Tool usage guidelines
+        Tool selection (When to use which tool)
+        Workflows (step-by-step procedures)
+        Error handling (what to do for each error type)
+        Escalation (when & how to escalate)
 """
 
 from google.adk.agents import LlmAgent
